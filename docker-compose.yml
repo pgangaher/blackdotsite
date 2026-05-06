@@ -1,0 +1,9 @@
+services:
+  black-dot-web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: black-dot-web
+    ports:
+      - "3319:80"
+    restart: unless-stopped

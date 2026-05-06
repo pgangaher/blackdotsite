@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Black Dot — Unified Observability &amp; Cyber Resilience powered by Datadog. Infrastructure monitoring, APM, log management, DEM and integrated SIEM.">
+  <title>Unified Observability &amp; Cyber Resilience — Black Dot</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream: '#FAFAF7',
+            navy: '#1a2744',
+            'navy-mid': '#243459',
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/service-page.css">
+</head>
+<body class="bg-cream font-sans antialiased">
+
+  <!-- NAVIGATION -->
+  <header id="site-header" class="fixed top-0 left-0 right-0 z-50 nav-solid">
+    <nav class="max-w-7xl mx-auto px-6 lg:px-10 flex items-center justify-between h-16 lg:h-20">
+      <a href="../index.html" class="flex-shrink-0 flex items-center">
+        <img src="../assets/logo.jpg" alt="Black Dot" class="h-9 lg:h-11 w-auto object-contain">
+      </a>
+      <ul class="hidden md:flex items-center gap-8">
+        <li class="nav-dropdown">
+          <a href="../index.html#services" class="nav-link nav-dropdown-trigger text-sm font-medium tracking-wide transition-colors duration-200 inline-flex items-center gap-1">
+            Services
+            <svg class="nav-chevron" width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true">
+              <path d="M2 4l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <div class="nav-dropdown-menu">
+            <a href="code-ai-security.html" class="nav-dropdown-item">
+              <span class="nav-dropdown-num">01</span>
+              <span><span class="nav-dropdown-title">Code &amp; AI Security</span><span class="nav-dropdown-sub">Snyk</span></span>
+            </a>
+            <a href="observability-security.html" class="nav-dropdown-item">
+              <span class="nav-dropdown-num">02</span>
+              <span><span class="nav-dropdown-title">Unified Observability</span><span class="nav-dropdown-sub">Datadog</span></span>
+            </a>
+            <a href="zero-trust-security.html" class="nav-dropdown-item">
+              <span class="nav-dropdown-num">03</span>
+              <span><span class="nav-dropdown-title">Zero Trust Security</span><span class="nav-dropdown-sub">Palo Alto Networks &middot; Cisco</span></span>
+            </a>
+            <a href="cyber-resiliency.html" class="nav-dropdown-item">
+              <span class="nav-dropdown-num">04</span>
+              <span><span class="nav-dropdown-title">Zero Trust Data Security</span><span class="nav-dropdown-sub">Rubrik</span></span>
+            </a>
+          </div>
+        </li>
+        <li><a href="../index.html#partners" class="nav-link text-sm font-medium tracking-wide transition-colors duration-200">Partners</a></li>
+        <li><a href="../index.html#about" class="nav-link text-sm font-medium tracking-wide transition-colors duration-200">About</a></li>
+        <li><a href="../index.html#contact" class="nav-cta text-sm font-semibold px-5 py-2 rounded-full border transition-all duration-200">Contact Us</a></li>
+      </ul>
+      <button id="hamburger" class="md:hidden p-2 focus:outline-none" aria-label="Toggle navigation menu">
+        <span class="ham-bar block w-5 h-[1.5px] bg-current mb-[5px] transition-all duration-300 origin-center"></span>
+        <span class="ham-bar block w-5 h-[1.5px] bg-current mb-[5px] transition-all duration-300"></span>
+        <span class="ham-bar block w-5 h-[1.5px] bg-current transition-all duration-300 origin-center"></span>
+      </button>
+    </nav>
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 shadow-lg">
+      <ul class="flex flex-col px-6 py-4 gap-1">
+        <li class="mobile-section-label">Services</li>
+        <li><a href="code-ai-security.html"      class="block text-sm font-medium text-navy/80 py-2.5 pl-3 border-l-2 border-navy/10">Code &amp; AI Security</a></li>
+        <li><a href="observability-security.html" class="block text-sm font-medium text-navy/80 py-2.5 pl-3 border-l-2 border-navy/10">Unified Observability</a></li>
+        <li><a href="zero-trust-security.html"   class="block text-sm font-medium text-navy/80 py-2.5 pl-3 border-l-2 border-navy/10">Zero Trust Security</a></li>
+        <li><a href="cyber-resiliency.html"      class="block text-sm font-medium text-navy/80 py-2.5 pl-3 border-l-2 border-navy/10 mb-2">Zero Trust Data Security</a></li>
+        <li><a href="../index.html#partners" class="block text-sm font-medium text-navy py-3 border-t border-gray-100">Partners</a></li>
+        <li><a href="../index.html#about"    class="block text-sm font-medium text-navy py-3 border-t border-gray-100">About</a></li>
+        <li><a href="../index.html#contact"  class="block text-sm font-semibold text-navy py-3 border-t border-gray-100">Contact Us</a></li>
+      </ul>
+    </div>
+  </header>
+
+
+  <!-- HERO BANNER -->
+  <section class="service-hero bg-navy pt-32 pb-20 lg:pt-40 lg:pb-28">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10">
+      <a href="../index.html#services" class="inline-flex items-center gap-2 text-white/50 text-sm font-medium mb-8 hover:text-white/80 transition-colors">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 12L6 8l4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        All Services
+      </a>
+      <span class="service-number text-white/30">Service 02</span>
+      <h1 class="text-4xl lg:text-6xl font-bold text-white leading-tight tracking-tight mt-2">
+        Unified Observability<br>&amp; Cyber Resilience
+      </h1>
+      <p class="text-white/60 text-lg lg:text-xl font-light max-w-2xl mt-6 leading-relaxed">
+        An AI-driven, full-stack observability and security ecosystem on a cloud-native architecture —
+        designed for scale, resilience and real-time insight. Powered by our partnership with Datadog.
+      </p>
+      <div class="mt-8 flex items-center gap-4">
+        <span class="partner-badge">Partner: Datadog</span>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- OVERVIEW -->
+  <section class="py-20 lg:py-28 bg-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10">
+      <div class="grid lg:grid-cols-2 gap-16 items-start">
+
+        <div class="reveal">
+          <p class="eyebrow-label">Overview</p>
+          <h2 class="section-heading mt-4">See everything.<br>Miss nothing.</h2>
+          <p class="section-body mb-5">
+            Modern infrastructure spans hybrid clouds, microservices, containers, and serverless functions.
+            Without unified observability, teams waste hours correlating signals across disconnected tools
+            while incidents escalate and customers are impacted.
+          </p>
+          <p class="section-body-light">
+            As a Datadog consulting partner, we architect, implement, and optimise Datadog's unified platform
+            so your engineering and security teams get a single pane of glass across metrics, traces, logs,
+            and security signals — reducing mean time to resolution and strengthening your security posture.
+          </p>
+        </div>
+
+        <div class="reveal">
+          <div class="bg-cream rounded-2xl p-8 lg:p-10">
+            <h3 class="text-sm font-bold tracking-widest uppercase text-navy/40 mb-6">What We Deliver</h3>
+            <ul class="space-y-4">
+              <li class="flex items-start gap-3">
+                <span class="check-icon">&#10003;</span>
+                <span class="text-navy text-[0.9375rem] leading-relaxed">Datadog platform architecture, deployment, and integration design</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="check-icon">&#10003;</span>
+                <span class="text-navy text-[0.9375rem] leading-relaxed">Custom dashboard buildout with SLO/SLI tracking and executive views</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="check-icon">&#10003;</span>
+                <span class="text-navy text-[0.9375rem] leading-relaxed">Alert tuning and on-call workflow optimisation to reduce noise</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="check-icon">&#10003;</span>
+                <span class="text-navy text-[0.9375rem] leading-relaxed">Cloud SIEM and security posture management implementation</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- CAPABILITIES -->
+  <section class="py-20 lg:py-28 bg-cream">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10">
+      <div class="reveal text-center mb-16 max-w-2xl mx-auto">
+        <p class="eyebrow-label">Core Technology Components</p>
+        <h2 class="section-heading mt-4">One platform. Every signal.</h2>
+        <p class="section-body-light">A unified, cloud-native ecosystem for observability, security and operational intelligence.</p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <div class="reveal capability-card">
+          <div class="capability-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+          </div>
+          <h3 class="capability-title">Infrastructure Monitoring</h3>
+          <p class="capability-desc">Comprehensive visibility across servers, containers, databases and multi-cloud environments — with real-time performance monitoring and efficient resource utilisation.</p>
+        </div>
+
+        <div class="reveal capability-card">
+          <div class="capability-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <h3 class="capability-title">Application Performance Monitoring</h3>
+          <p class="capability-desc">End-to-end distributed tracing tracks performance, analyses request flows and quickly identifies errors across modern, microservices-based architectures.</p>
+        </div>
+
+        <div class="reveal capability-card">
+          <div class="capability-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          </div>
+          <h3 class="capability-title">Log Management</h3>
+          <p class="capability-desc">Scalable log collection, processing and analytics with flexible indexing and retention controls — actionable insight while optimising costs.</p>
+        </div>
+
+        <div class="reveal capability-card">
+          <div class="capability-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+          </div>
+          <h3 class="capability-title">Digital Experience Monitoring</h3>
+          <p class="capability-desc">Synthetic monitoring proactively tests applications and APIs while real user monitoring captures and analyses actual user interactions and experience.</p>
+        </div>
+
+        <div class="reveal capability-card">
+          <div class="capability-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3 class="capability-title">Security Monitoring</h3>
+          <p class="capability-desc">Integrated SIEM, workload protection and application security capabilities — detect, investigate and respond to threats in real time.</p>
+        </div>
+
+        <div class="reveal capability-card">
+          <div class="capability-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+          </div>
+          <h3 class="capability-title">AI &amp; Automation</h3>
+          <p class="capability-desc">Intelligent automation for anomaly detection, root cause analysis and operational insights — accelerating incident response and improving reliability.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- WHY PARTNER -->
+  <section class="py-20 lg:py-28 bg-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+
+        <div class="reveal">
+          <p class="eyebrow-label">Why Black Dot</p>
+          <h2 class="section-heading mt-4">Black Dot<br>+ Datadog.</h2>
+          <p class="section-body mb-6">
+            Tool sprawl kills productivity. Engineering teams shouldn't need six different dashboards to diagnose one incident.
+            We consolidate your observability and security into Datadog's unified platform, then tune it so your teams
+            get signal, not noise.
+          </p>
+
+          <div class="space-y-5">
+            <div class="stat-row">
+              <span class="stat-number">700+</span>
+              <span class="stat-label">Out-of-the-box integrations for cloud, databases, orchestrators, and CI/CD</span>
+            </div>
+            <div class="stat-row">
+              <span class="stat-number">60%</span>
+              <span class="stat-label">Faster mean time to resolution with correlated observability data</span>
+            </div>
+            <div class="stat-row">
+              <span class="stat-number">1</span>
+              <span class="stat-label">Single platform replacing fragmented monitoring, logging, and security tools</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal">
+          <div class="bg-navy rounded-2xl p-8 lg:p-10">
+            <h3 class="text-sm font-bold tracking-widest uppercase text-white/40 mb-6">Our Approach</h3>
+            <div class="space-y-6">
+              <div>
+                <p class="text-white font-semibold mb-1">1. Discover</p>
+                <p class="text-white/60 text-sm leading-relaxed">Map your infrastructure, services, and existing tooling to design the optimal Datadog architecture.</p>
+              </div>
+              <div>
+                <p class="text-white font-semibold mb-1">2. Instrument</p>
+                <p class="text-white/60 text-sm leading-relaxed">Deploy agents, configure integrations, and set up distributed tracing across your entire stack.</p>
+              </div>
+              <div>
+                <p class="text-white font-semibold mb-1">3. Visualise</p>
+                <p class="text-white/60 text-sm leading-relaxed">Build tailored dashboards, SLOs, and alert policies that give teams actionable insights — not alert fatigue.</p>
+              </div>
+              <div>
+                <p class="text-white font-semibold mb-1">4. Secure</p>
+                <p class="text-white/60 text-sm leading-relaxed">Activate Cloud SIEM, CSPM, and threat detection to unify observability and security under one roof.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- CTA -->
+  <section class="py-20 lg:py-28 bg-navy">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10 text-center reveal">
+      <h2 class="text-3xl lg:text-4xl font-bold text-white mb-4">Ready for full-stack visibility?</h2>
+      <p class="text-white/50 text-lg mb-8 max-w-xl mx-auto">Let's discuss how Datadog and Black Dot can eliminate blind spots across your infrastructure.</p>
+      <a href="../index.html#contact" class="inline-block bg-white text-navy font-semibold text-sm px-8 py-3.5 rounded-full hover:bg-white/90 transition-colors duration-200">
+        Get in Touch
+      </a>
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer class="bg-navy border-t border-white/10 py-8">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <img src="../assets/logo.jpg" alt="Black Dot" class="h-8 w-auto object-contain opacity-50">
+      <p class="text-white/35 text-xs tracking-wide text-center">
+        Copyright &copy; 2026 Black Dot Consultancy Pvt. Ltd. &mdash; All Rights Reserved.
+      </p>
+    </div>
+  </footer>
+
+  <script src="../js/service-page.js"></script>
+</body>
+</html>

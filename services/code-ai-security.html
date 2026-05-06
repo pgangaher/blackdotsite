@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Black Dot — AI-native developer security platform powered by Snyk. SAST, SCA, container, IaC and AI-code scanning embedded across IDEs and CI/CD pipelines.">
+  <title>Code &amp; AI Security Platform — Black Dot</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream: '#FAFAF7',
+            navy: '#1a2744',
+            'navy-mid': '#243459',
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/service-page.css">
+</head>
+<body class="bg-cream font-sans antialiased">
+
+  <!-- NAVIGATION -->
+  <header id="site-header" class="fixed top-0 left-0 right-0 z-50 nav-solid">
+    <nav class="max-w-7xl mx-auto px-6 lg:px-10 flex items-center justify-between h-16 lg:h-20">
+      <a href="../index.html" class="flex-shrink-0 flex items-center">
+        <img src="../assets/logo.jpg" alt="Black Dot" class="h-9 lg:h-11 w-auto object-contain">
+      </a>
+      <ul class="hidden md:flex items-center gap-8">
+        <li class="nav-dropdown">
+          <a href="../index.html#services" class="nav-link nav-dropdown-trigger text-sm font-medium tracking-wide transition-colors duration-200 inline-flex items-center gap-1">
+            Services
+            <svg class="nav-chevron" width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true">
+              <path d="M2 4l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <div class="nav-dropdown-menu">
+            <a href="code-ai-security.html" class="nav-dropdown-item">
+              <span class="nav-dropdown-num">01</span>
+              <span><span class="nav-dropdown-title">Code &amp; AI Security</span><span class="nav-dropdown-sub">Snyk</span></span>
+            </a>
+            <a href="observability-security.html" class="nav-dropdown-item">
+              <span class="nav-dropdown-num">02</span>
+              <span><span class="nav-dropdown-title">Unified Observability</span><span class="nav-dropdown-sub">Datadog</span></span>
+            </a>
+            <a href="zero-trust-security.html" class="nav-dropdown-item">
+              <span class="nav-dropdown-num">03</span>
+              <span><span class="nav-dropdown-title">Zero Trust Security</span><span class="nav-dropdown-sub">Palo Alto Networks &middot; Cisco</span></span>
+            </a>
+            <a href="cyber-resiliency.html" class="nav-dropdown-item">
+              <span class="nav-dropdown-num">04</span>
+              <span><span class="nav-dropdown-title">Zero Trust Data Security</span><span class="nav-dropdown-sub">Rubrik</span></span>
+            </a>
+          </div>
+        </li>
+        <li><a href="../index.html#partners" class="nav-link text-sm font-medium tracking-wide transition-colors duration-200">Partners</a></li>
+        <li><a href="../index.html#about" class="nav-link text-sm font-medium tracking-wide transition-colors duration-200">About</a></li>
+        <li><a href="../index.html#contact" class="nav-cta text-sm font-semibold px-5 py-2 rounded-full border transition-all duration-200">Contact Us</a></li>
+      </ul>
+      <button id="hamburger" class="md:hidden p-2 focus:outline-none" aria-label="Toggle navigation menu">
+        <span class="ham-bar block w-5 h-[1.5px] bg-current mb-[5px] transition-all duration-300 origin-center"></span>
+        <span class="ham-bar block w-5 h-[1.5px] bg-current mb-[5px] transition-all duration-300"></span>
+        <span class="ham-bar block w-5 h-[1.5px] bg-current transition-all duration-300 origin-center"></span>
+      </button>
+    </nav>
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 shadow-lg">
+      <ul class="flex flex-col px-6 py-4 gap-1">
+        <li class="mobile-section-label">Services</li>
+        <li><a href="code-ai-security.html"      class="block text-sm font-medium text-navy/80 py-2.5 pl-3 border-l-2 border-navy/10">Code &amp; AI Security</a></li>
+        <li><a href="observability-security.html" class="block text-sm font-medium text-navy/80 py-2.5 pl-3 border-l-2 border-navy/10">Unified Observability</a></li>
+        <li><a href="zero-trust-security.html"   class="block text-sm font-medium text-navy/80 py-2.5 pl-3 border-l-2 border-navy/10">Zero Trust Security</a></li>
+        <li><a href="cyber-resiliency.html"      class="block text-sm font-medium text-navy/80 py-2.5 pl-3 border-l-2 border-navy/10 mb-2">Zero Trust Data Security</a></li>
+        <li><a href="../index.html#partners" class="block text-sm font-medium text-navy py-3 border-t border-gray-100">Partners</a></li>
+        <li><a href="../index.html#about"    class="block text-sm font-medium text-navy py-3 border-t border-gray-100">About</a></li>
+        <li><a href="../index.html#contact"  class="block text-sm font-semibold text-navy py-3 border-t border-gray-100">Contact Us</a></li>
+      </ul>
+    </div>
+  </header>
+
+
+  <!-- HERO BANNER -->
+  <section class="service-hero bg-navy pt-32 pb-20 lg:pt-40 lg:pb-28">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10">
+      <a href="../index.html#services" class="inline-flex items-center gap-2 text-white/50 text-sm font-medium mb-8 hover:text-white/80 transition-colors">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 12L6 8l4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        All Services
+      </a>
+      <span class="service-number text-white/30">Service 01</span>
+      <h1 class="text-4xl lg:text-6xl font-bold text-white leading-tight tracking-tight mt-2">
+        AI-native developer<br>security platform
+      </h1>
+      <p class="text-white/60 text-lg lg:text-xl font-light max-w-2xl mt-6 leading-relaxed">
+        Embed security directly into the developer workflow — from IDE to CI/CD to cloud.
+        Powered by our partnership with Snyk.
+      </p>
+      <div class="mt-8 flex items-center gap-4">
+        <span class="partner-badge">Partner: Snyk</span>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- OVERVIEW -->
+  <section class="py-20 lg:py-28 bg-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10">
+      <div class="grid lg:grid-cols-2 gap-16 items-start">
+
+        <div class="reveal">
+          <p class="eyebrow-label">Overview</p>
+          <h2 class="section-heading mt-4">Developer-first security,<br>built for modern teams.</h2>
+          <p class="section-body mb-5">
+            Traditional security tools create bottlenecks — catching issues late in the cycle when fixes are expensive.
+            As a Snyk consulting partner, we help organisations shift security left, embedding it directly into IDEs,
+            Git repositories and CI/CD pipelines where developers already work.
+          </p>
+          <p class="section-body-light">
+            Whether your teams write code by hand or use AI assistants like GitHub Copilot, our solutions ensure every
+            line of code — human or machine-generated — is scanned, validated and secured before it reaches production.
+          </p>
+        </div>
+
+        <div class="reveal">
+          <div class="bg-cream rounded-2xl p-8 lg:p-10">
+            <h3 class="text-sm font-bold tracking-widest uppercase text-navy/40 mb-6">What We Deliver</h3>
+            <ul class="space-y-4">
+              <li class="flex items-start gap-3">
+                <span class="check-icon">&#10003;</span>
+                <span class="text-navy text-[0.9375rem] leading-relaxed">Snyk platform implementation and onboarding across your engineering teams</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="check-icon">&#10003;</span>
+                <span class="text-navy text-[0.9375rem] leading-relaxed">CI/CD pipeline integration for automated vulnerability scanning</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="check-icon">&#10003;</span>
+                <span class="text-navy text-[0.9375rem] leading-relaxed">Developer training and security-first culture enablement</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="check-icon">&#10003;</span>
+                <span class="text-navy text-[0.9375rem] leading-relaxed">Ongoing vulnerability management and remediation support</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- CAPABILITIES -->
+  <section class="py-20 lg:py-28 bg-cream">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10">
+      <div class="reveal text-center mb-16 max-w-2xl mx-auto">
+        <p class="eyebrow-label">Technologies &amp; Capabilities</p>
+        <h2 class="section-heading mt-4">A complete application security stack.</h2>
+        <p class="section-body-light">End-to-end security across your software supply chain — from the first keystroke to production.</p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <div class="reveal capability-card">
+          <div class="capability-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v6m0 10v6M4.22 4.22l4.24 4.24m7.08 7.08l4.24 4.24M1 12h6m10 0h6M4.22 19.78l4.24-4.24m7.08-7.08l4.24-4.24"/></svg>
+          </div>
+          <h3 class="capability-title">AI-Driven Security &amp; Machine Learning</h3>
+          <p class="capability-desc">Detects complex vulnerabilities including multi-step source-to-sink flows, while continuously evolving security intelligence reduces false positives.</p>
+        </div>
+
+        <div class="reveal capability-card">
+          <div class="capability-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          </div>
+          <h3 class="capability-title">Developer-Centric Integration</h3>
+          <p class="capability-desc">Seamless integration with VS Code, IntelliJ, GitHub, GitLab, Bitbucket and CI/CD pipelines — embedding security early in the development lifecycle.</p>
+        </div>
+
+        <div class="reveal capability-card">
+          <div class="capability-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          </div>
+          <h3 class="capability-title">Advanced Scanning Technology</h3>
+          <p class="capability-desc">High-performance, constraint-based scanning engines deliver fast, accurate, actionable results in seconds to minutes — enabling rapid remediation.</p>
+        </div>
+
+        <div class="reveal capability-card">
+          <div class="capability-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.7 4 3 9 3s9-1.3 9-3V5"/><path d="M3 12c0 1.7 4 3 9 3s9-1.3 9-3"/></svg>
+          </div>
+          <h3 class="capability-title">Continuously Updated Security Intelligence</h3>
+          <p class="capability-desc">A dynamic vulnerability database constantly updated to detect and mitigate emerging threats proactively, before they reach production.</p>
+        </div>
+
+        <div class="reveal capability-card">
+          <div class="capability-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3 class="capability-title">Comprehensive Coverage</h3>
+          <p class="capability-desc">Multiple testing methodologies — SAST, SCA, container security and IaC scanning — providing end-to-end application security visibility.</p>
+        </div>
+
+        <div class="reveal capability-card">
+          <div class="capability-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+          </div>
+          <h3 class="capability-title">Real-Time Risk Prioritisation</h3>
+          <p class="capability-desc">Contextual analysis and risk scoring prioritise vulnerabilities by exploitability and business impact — so teams focus on what matters most.</p>
+        </div>
+
+        <div class="reveal capability-card">
+          <div class="capability-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 109 20h9a5 5 0 000-10z"/></svg>
+          </div>
+          <h3 class="capability-title">Cloud-Native &amp; Scalable</h3>
+          <p class="capability-desc">Built for modern, cloud-native environments with the ability to scale across large codebases and distributed development teams.</p>
+        </div>
+
+        <div class="reveal capability-card">
+          <div class="capability-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          </div>
+          <h3 class="capability-title">Policy Management &amp; Governance</h3>
+          <p class="capability-desc">Enforce security policies, compliance standards and guardrails consistently across every stage of the development pipeline.</p>
+        </div>
+
+        <div class="reveal capability-card">
+          <div class="capability-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><path d="M21 12c0 5-4 9-9 9s-9-4-9-9 4-9 9-9c2.5 0 4.7 1 6.4 2.6"/></svg>
+          </div>
+          <h3 class="capability-title">Automated Remediation Guidance</h3>
+          <p class="capability-desc">Clear, actionable fix recommendations and code-level insights — accelerating remediation and dramatically reducing resolution time.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- WHY PARTNER -->
+  <section class="py-20 lg:py-28 bg-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+
+        <div class="reveal">
+          <p class="eyebrow-label">Why Black Dot</p>
+          <h2 class="section-heading mt-4">Black Dot<br>+ Snyk.</h2>
+          <p class="section-body mb-6">
+            Finding and fixing vulnerabilities early in development is orders of magnitude cheaper than post-production remediation.
+            Our certified consultants implement Snyk's developer-first tooling so your teams ship faster without sacrificing security.
+          </p>
+
+          <div class="space-y-5">
+            <div class="stat-row">
+              <span class="stat-number">700+</span>
+              <span class="stat-label">Integrations across languages, package managers, and CI/CD tools</span>
+            </div>
+            <div class="stat-row">
+              <span class="stat-number">80%</span>
+              <span class="stat-label">Reduction in time-to-fix with automated remediation PRs</span>
+            </div>
+            <div class="stat-row">
+              <span class="stat-number">100%</span>
+              <span class="stat-label">Coverage across first-party code, open-source, containers, and IaC</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal">
+          <div class="bg-navy rounded-2xl p-8 lg:p-10">
+            <h3 class="text-sm font-bold tracking-widest uppercase text-white/40 mb-6">Our Approach</h3>
+            <div class="space-y-6">
+              <div>
+                <p class="text-white font-semibold mb-1">1. Assess</p>
+                <p class="text-white/60 text-sm leading-relaxed">Audit your current development workflows, toolchain, and security posture to identify gaps and opportunities.</p>
+              </div>
+              <div>
+                <p class="text-white font-semibold mb-1">2. Implement</p>
+                <p class="text-white/60 text-sm leading-relaxed">Deploy Snyk across your IDE, SCM, and CI/CD environments with custom policies and gate configurations.</p>
+              </div>
+              <div>
+                <p class="text-white font-semibold mb-1">3. Enable</p>
+                <p class="text-white/60 text-sm leading-relaxed">Train your developers and security champions to own application security as part of their daily workflow.</p>
+              </div>
+              <div>
+                <p class="text-white font-semibold mb-1">4. Optimise</p>
+                <p class="text-white/60 text-sm leading-relaxed">Continuously tune policies, triage findings, and expand coverage as your organisation scales.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- CTA -->
+  <section class="py-20 lg:py-28 bg-navy">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10 text-center reveal">
+      <h2 class="text-3xl lg:text-4xl font-bold text-white mb-4">Ready to secure your software supply chain?</h2>
+      <p class="text-white/50 text-lg mb-8 max-w-xl mx-auto">Let's discuss how Snyk and Black Dot can protect your code from development to deployment.</p>
+      <a href="../index.html#contact" class="inline-block bg-white text-navy font-semibold text-sm px-8 py-3.5 rounded-full hover:bg-white/90 transition-colors duration-200">
+        Get in Touch
+      </a>
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer class="bg-navy border-t border-white/10 py-8">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <img src="../assets/logo.jpg" alt="Black Dot" class="h-8 w-auto object-contain opacity-50">
+      <p class="text-white/35 text-xs tracking-wide text-center">
+        Copyright &copy; 2026 Black Dot Consultancy Pvt. Ltd. &mdash; All Rights Reserved.
+      </p>
+    </div>
+  </footer>
+
+  <script src="../js/service-page.js"></script>
+</body>
+</html>
