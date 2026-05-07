@@ -28,15 +28,15 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="css/service-page.css">
+  <link rel="stylesheet" href="css/styles.css?v=2">
+  <link rel="stylesheet" href="css/service-page.css?v=2">
 </head>
 <body class="bg-cream font-sans antialiased">
 
   <!-- ═══════════════════════════════════════════════
        NAVIGATION
   ═══════════════════════════════════════════════ -->
-  <header id="site-header" class="fixed top-0 left-0 right-0 z-50 nav-solid">
+  <header id="site-header" class="fixed top-0 left-0 right-0 z-50">
     <nav class="max-w-7xl mx-auto px-6 lg:px-10 flex items-center justify-between h-16 lg:h-20">
 
       <a href="#" class="flex-shrink-0 flex items-center">
@@ -83,7 +83,6 @@
             </a>
           </div>
         </li>
-        <li><a href="#partners" class="nav-link text-sm font-medium tracking-wide transition-colors duration-200">Partners</a></li>
         <li><a href="#about" class="nav-link text-sm font-medium tracking-wide transition-colors duration-200">About</a></li>
         <li>
           <a href="#contact" class="nav-cta text-sm font-semibold px-5 py-2 rounded-full border transition-all duration-200">
@@ -108,7 +107,6 @@
         <li><a href="services/observability-security.html" class="block text-sm font-medium text-navy/80 py-2.5 pl-3 border-l-2 border-navy/10">Unified Observability</a></li>
         <li><a href="services/zero-trust-security.html"   class="block text-sm font-medium text-navy/80 py-2.5 pl-3 border-l-2 border-navy/10">Zero Trust Security</a></li>
         <li><a href="services/cyber-resiliency.html"      class="block text-sm font-medium text-navy/80 py-2.5 pl-3 border-l-2 border-navy/10 mb-2">Zero Trust Data Security</a></li>
-        <li><a href="#partners" class="block text-sm font-medium text-navy py-3 border-t border-gray-100">Partners</a></li>
         <li><a href="#about"    class="block text-sm font-medium text-navy py-3 border-t border-gray-100">About</a></li>
         <li><a href="#contact"  class="block text-sm font-semibold text-navy py-3 border-t border-gray-100">Contact Us</a></li>
       </ul>
@@ -393,64 +391,6 @@
 
 
   <!-- ═══════════════════════════════════════════════
-       PARTNERS
-  ═══════════════════════════════════════════════ -->
-  <section id="partners" class="py-24 lg:py-32 bg-cream">
-    <div class="max-w-7xl mx-auto px-6 lg:px-10">
-
-      <div class="reveal text-center mb-14 max-w-2xl mx-auto">
-        <p class="eyebrow-label">Our Partners</p>
-        <h2 class="section-heading mt-4">Best-of-breed technology, brought together.</h2>
-        <p class="section-body-light">
-          We collaborate with leading technology vendors to deliver solutions that secure applications,
-          enhance performance and build resilient, future-ready digital platforms.
-        </p>
-      </div>
-
-      <div class="reveal grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-px bg-black/5 rounded-2xl overflow-hidden border border-black/5">
-        <div class="partner-tile" title="Snyk">
-          <img src="assets/partners/snyk.svg" alt="Snyk" class="partner-logo partner-logo-mono">
-        </div>
-        <div class="partner-tile" title="Datadog">
-          <img src="assets/partners/datadog.svg" alt="Datadog" class="partner-logo partner-logo-mono">
-        </div>
-        <div class="partner-tile" title="Palo Alto Networks">
-          <img src="assets/partners/paloaltonetworks.svg" alt="Palo Alto Networks" class="partner-logo partner-logo-mono">
-        </div>
-        <div class="partner-tile" title="Cisco">
-          <img src="assets/partners/cisco.svg" alt="Cisco" class="partner-logo partner-logo-mono">
-        </div>
-        <div class="partner-tile" title="Rubrik">
-          <img src="assets/partners/rubrik.svg" alt="Rubrik" class="partner-logo">
-        </div>
-        <div class="partner-tile" title="Elastic">
-          <img src="assets/partners/elastic.svg" alt="Elastic" class="partner-logo partner-logo-mono">
-        </div>
-        <div class="partner-tile" title="RSA">
-          <img src="assets/partners/rsa.svg" alt="RSA" class="partner-logo">
-        </div>
-        <div class="partner-tile" title="GitGuardian">
-          <img src="assets/partners/gitguardian.svg" alt="GitGuardian" class="partner-logo">
-        </div>
-        <div class="partner-tile" title="ImmuniWeb">
-          <img src="assets/partners/immuniweb.svg" alt="ImmuniWeb" class="partner-logo">
-        </div>
-        <div class="partner-tile" title="Gambit Cyber">
-          <img src="assets/partners/gambitcyber.svg" alt="Gambit Cyber" class="partner-logo">
-        </div>
-        <div class="partner-tile" title="Verge Cloud">
-          <img src="assets/partners/vergecloud.svg" alt="Verge Cloud" class="partner-logo">
-        </div>
-        <div class="partner-tile" title="Zeroport">
-          <img src="assets/partners/zeroport.svg" alt="Zeroport" class="partner-logo">
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-
-  <!-- ═══════════════════════════════════════════════
        CONTACT
   ═══════════════════════════════════════════════ -->
   <section id="contact" class="py-24 lg:py-36 bg-navy">
@@ -565,12 +505,12 @@
       </p>
       <div class="sm:justify-self-end flex items-center gap-5">
         <a href="#services" class="text-white/40 hover:text-white/70 text-xs tracking-wide transition-colors">Services</a>
-        <a href="#partners" class="text-white/40 hover:text-white/70 text-xs tracking-wide transition-colors">Partners</a>
+        <a href="#about"    class="text-white/40 hover:text-white/70 text-xs tracking-wide transition-colors">About</a>
         <a href="#contact"  class="text-white/40 hover:text-white/70 text-xs tracking-wide transition-colors">Contact</a>
       </div>
     </div>
   </footer>
 
-  <script src="js/main.js"></script>
+  <script src="js/main.js?v=2"></script>
 </body>
 </html>

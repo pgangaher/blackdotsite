@@ -1,7 +1,27 @@
 (function () {
   'use strict';
 
+  /* ─────────────────────────────────────
+     Nav: transparent ↔ solid on scroll
+  ───────────────────────────────────── */
   const header  = document.getElementById('site-header');
+  const heroEl  = document.getElementById('hero');
+
+  function updateNav() {
+    const scrollY = window.scrollY;
+    const threshold = heroEl ? heroEl.offsetHeight - header.offsetHeight : 80;
+
+    if (scrollY > threshold) {
+      header.classList.remove('nav-transparent');
+      header.classList.add('nav-solid');
+    } else {
+      header.classList.remove('nav-solid');
+      header.classList.add('nav-transparent');
+    }
+  }
+
+  updateNav();
+  window.addEventListener('scroll', updateNav, { passive: true });
 
 
   /* ─────────────────────────────────────
