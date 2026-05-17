@@ -45,6 +45,33 @@
     });
   }
 
+  /* ─────────────────────────────────────
+     Cursor trail — spawn black dots under mouse
+  ───────────────────────────────────── */
+  var supportsHover = window.matchMedia('(hover: hover)').matches;
+  var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (supportsHover && !reducedMotion) {
+    var lastSpawn = 0;
+    var SPAWN_INTERVAL = 35;
+    var DOT_LIFETIME   = 700;
+
+    window.addEventListener('mousemove', function (e) {
+      var now = performance.now();
+      if (now - lastSpawn < SPAWN_INTERVAL) return;
+      lastSpawn = now;
+
+      var dot = document.createElement('div');
+      dot.className = 'cursor-dot';
+      dot.style.left = e.clientX + 'px';
+      dot.style.top  = e.clientY + 'px';
+      document.body.appendChild(dot);
+
+      setTimeout(function () { dot.remove(); }, DOT_LIFETIME);
+    }, { passive: true });
+  }
+
+
   var revealEls = document.querySelectorAll('.reveal');
   var revealObserver = new IntersectionObserver(
     function (entries) {

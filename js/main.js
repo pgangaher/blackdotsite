@@ -85,10 +85,39 @@
 
 
   /* ─────────────────────────────────────
+     Cursor trail — spawn black dots under mouse
+  ───────────────────────────────────── */
+  const supportsHover = window.matchMedia('(hover: hover)').matches;
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (supportsHover && !reducedMotion) {
+    let lastSpawn = 0;
+    const SPAWN_INTERVAL = 35; // ms between dots
+    const DOT_LIFETIME   = 700;
+
+    window.addEventListener('mousemove', (e) => {
+      const now = performance.now();
+      if (now - lastSpawn < SPAWN_INTERVAL) return;
+      lastSpawn = now;
+
+      const dot = document.createElement('div');
+      dot.className = 'cursor-dot';
+      dot.style.left = e.clientX + 'px';
+      dot.style.top  = e.clientY + 'px';
+      document.body.appendChild(dot);
+
+      setTimeout(() => dot.remove(), DOT_LIFETIME);
+    }, { passive: true });
+  }
+
+
+  /* ─────────────────────────────────────
      Contact form (front-end only)
   ───────────────────────────────────── */
   const form       = document.getElementById('contact-form');
   const formStatus = document.getElementById('form-status');
+
+  if (!form) return;
 
   form.addEventListener('submit', function (e) {
     e.preventDefault();

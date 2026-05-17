@@ -8,10 +8,12 @@ RUN rm -rf /usr/share/nginx/html/* \
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 # Copy all static site files
-COPY index.html  /usr/share/nginx/html/
-COPY css/        /usr/share/nginx/html/css/
-COPY js/         /usr/share/nginx/html/js/
-COPY assets/     /usr/share/nginx/html/assets/
-COPY services/   /usr/share/nginx/html/services/
+COPY index.html        /usr/share/nginx/html/
+COPY careers.html      /usr/share/nginx/html/
+COPY partnerships.html /usr/share/nginx/html/
+COPY css/              /usr/share/nginx/html/css/
+COPY js/               /usr/share/nginx/html/js/
+COPY assets/           /usr/share/nginx/html/assets/
+COPY services/         /usr/share/nginx/html/services/
 
 EXPOSE 80

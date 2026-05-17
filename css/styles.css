@@ -150,8 +150,8 @@ body {
   font-weight: 700;
   letter-spacing: 0.28em;
   text-transform: uppercase;
-  color: #1a2744;
-  opacity: 0.35;
+  color: #2dd4bf;
+  opacity: 1;
   margin-bottom: 1.1rem;
 }
 
@@ -161,7 +161,7 @@ body {
   color: #1a2744;
   line-height: 1.12;
   letter-spacing: -0.02em;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.75rem;
 }
 
 .section-body {
@@ -230,14 +230,15 @@ body {
 .form-input::placeholder { color: rgba(255,255,255,0.25); }
 
 .form-input:focus {
-  border-color: rgba(255,255,255,0.4);
+  border-color: #2dd4bf;
   background-color: rgba(255,255,255,0.10);
+  box-shadow: 0 0 0 3px rgba(45,212,191,0.15);
 }
 
 .form-submit {
   display: block;
   width: 100%;
-  background-color: #ffffff;
+  background-color: #2dd4bf;
   color: #1a2744;
   font-weight: 600;
   font-size: 0.875rem;
@@ -250,7 +251,7 @@ body {
   font-family: inherit;
 }
 .form-submit:hover {
-  background-color: rgba(255,255,255,0.9);
+  background-color: #26bfac;
   transform: translateY(-1px);
 }
 .form-submit:active { transform: translateY(0); }
@@ -393,8 +394,8 @@ body {
   top: 50%;
   width: 18px;
   height: 1px;
-  background-color: currentColor;
-  opacity: 0.6;
+  background-color: #2dd4bf;
+  opacity: 1;
 }
 
 .eyebrow-label-light {
@@ -414,8 +415,8 @@ body {
   top: 50%;
   width: 18px;
   height: 1px;
-  background-color: currentColor;
-  opacity: 0.6;
+  background-color: #2dd4bf;
+  opacity: 1;
 }
 
 /* ─────────────────────────────────────────────
@@ -439,15 +440,15 @@ body {
   padding: 0 0.5rem;
 }
 .metric-number {
-  font-size: 2.25rem;
+  font-size: 2.75rem;
   font-weight: 800;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
   color: #1a2744;
   line-height: 1;
   margin-bottom: 0.5rem;
 }
 .metric-label {
-  font-size: 0.8125rem;
+  font-size: 0.875rem;
   color: #6b7280;
   line-height: 1.5;
   max-width: 14rem;
@@ -461,7 +462,7 @@ body {
   align-items: center;
   gap: 0.75rem;
   background-color: #FAFAF7;
-  border: 1px solid rgba(0,0,0,0.05);
+  border: 1px solid rgba(45,212,191,0.18);
   border-radius: 9999px;
   padding: 0.65rem 1.1rem;
   font-size: 0.875rem;
@@ -475,8 +476,8 @@ body {
   width: 26px;
   height: 26px;
   border-radius: 50%;
-  background-color: rgba(26, 39, 68, 0.08);
-  color: #1a2744;
+  background-color: rgba(45,212,191,0.12);
+  color: #14b8a6;
   flex-shrink: 0;
 }
 
@@ -604,4 +605,182 @@ body {
   .partner-tile-text { font-size: 0.82rem; }
   .partner-logo { max-height: 26px; }
   .metric-number { font-size: 1.75rem; }
+}
+
+/* ─────────────────────────────────────────────
+   Teal rule utility
+───────────────────────────────────────────── */
+.teal-rule {
+  display: block;
+  width: 36px;
+  height: 2px;
+  background: #2dd4bf;
+  border-radius: 2px;
+  margin-bottom: 1.25rem;
+}
+
+/* ─────────────────────────────────────────────
+   About — Why Black Dot cards (replaces pills)
+───────────────────────────────────────────── */
+.why-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.25rem 1.25rem 1.25rem 1rem;
+  background: #FAFAF7;
+  border: 1px solid rgba(0,0,0,0.05);
+  border-left: 3px solid #2dd4bf;
+  border-radius: 0.75rem;
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+.why-card:hover {
+  box-shadow: 0 6px 24px rgba(26,39,68,0.08);
+  transform: translateY(-2px);
+}
+.why-card-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: rgba(45,212,191,0.1);
+  color: #14b8a6;
+  flex-shrink: 0;
+}
+.why-card-title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #1a2744;
+  margin-bottom: 0.2rem;
+}
+.why-card-desc {
+  font-size: 0.8125rem;
+  color: #6b7280;
+  line-height: 1.5;
+}
+
+/* ─────────────────────────────────────────────
+   Why Black Dot — pillar blocks
+───────────────────────────────────────────── */
+.pillar-block {
+  padding: 2rem;
+  background: #ffffff;
+  border-radius: 1.25rem;
+  border: 1px solid rgba(0,0,0,0.05);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+.pillar-block:hover {
+  box-shadow: 0 12px 40px rgba(26,39,68,0.08);
+  transform: translateY(-3px);
+}
+.pillar-number {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #2dd4bf;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+.pillar-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #1a2744;
+  margin-bottom: 0.65rem;
+  letter-spacing: -0.01em;
+}
+.pillar-desc {
+  font-size: 0.875rem;
+  color: #6b7280;
+  line-height: 1.75;
+}
+
+/* ─────────────────────────────────────────────
+   Contact section refinements
+───────────────────────────────────────────── */
+.contact-info-card {
+  padding: 2.5rem;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-top: 3px solid #2dd4bf;
+  border-radius: 1.25rem;
+}
+.contact-form-card {
+  background: rgba(36,52,89,0.8);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-top: 3px solid #2dd4bf;
+  border-radius: 1.25rem;
+  padding: 2.5rem;
+}
+.contact-detail-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.875rem;
+}
+.contact-detail-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: rgba(45,212,191,0.12);
+  color: #2dd4bf;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* ─────────────────────────────────────────────
+   Footer — structured multi-row
+───────────────────────────────────────────── */
+.footer-col-heading {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+  margin-bottom: 0.875rem;
+}
+.footer-link-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.footer-link {
+  font-size: 0.8125rem;
+  color: rgba(255,255,255,0.45);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.footer-link:hover { color: #2dd4bf; }
+
+/* ─────────────────────────────────────────────
+   Cursor trail — black dots that fade under mouse
+───────────────────────────────────────────── */
+.cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #1a2744;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  animation: cursor-dot-fade 700ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  will-change: transform, opacity;
+}
+
+@keyframes cursor-dot-fade {
+  0%   { opacity: 0.9; transform: translate(-50%, -50%) scale(1); }
+  100% { opacity: 0;   transform: translate(-50%, -50%) scale(0.2); }
+}
+
+@media (hover: none), (prefers-reduced-motion: reduce) {
+  .cursor-dot { display: none; }
 }

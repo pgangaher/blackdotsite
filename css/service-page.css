@@ -43,8 +43,8 @@
   width: 48px;
   height: 48px;
   border-radius: 12px;
-  background-color: rgba(26, 39, 68, 0.06);
-  color: #1a2744;
+  background-color: rgba(45,212,191,0.1);
+  color: #14b8a6;
   margin-bottom: 1.25rem;
 }
 
@@ -70,8 +70,8 @@
   width: 22px;
   height: 22px;
   border-radius: 50%;
-  background-color: rgba(26, 39, 68, 0.08);
-  color: #1a2744;
+  background-color: rgba(45,212,191,0.12);
+  color: #0f9688;
   font-size: 0.7rem;
   font-weight: 700;
   margin-top: 2px;
@@ -111,17 +111,37 @@
   position: relative;
   background-color: #ffffff;
   border: 1px solid rgba(0,0,0,0.06);
-  border-radius: 1.25rem;
-  padding: 2.5rem 2rem 2rem;
-  transition: box-shadow 0.35s ease, transform 0.35s ease;
+  border-radius: 1.5rem;
+  padding: 2.75rem 2.25rem 2rem;
+  transition: box-shadow 0.4s ease, transform 0.4s ease, border-color 0.3s ease;
   display: flex;
   flex-direction: column;
   height: 100%;
+  overflow: hidden;
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(180deg, #2dd4bf 0%, rgba(45,212,191,0.3) 100%);
+  border-radius: 3px 0 0 3px;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.service-card:hover::before {
+  transform: scaleY(1);
 }
 
 .service-card:hover {
-  box-shadow: 0 12px 40px rgba(0,0,0,0.08);
-  transform: translateY(-4px);
+  box-shadow: 0 20px 60px rgba(26,39,68,0.12), 0 4px 16px rgba(26,39,68,0.06);
+  transform: translateY(-6px);
+  border-color: rgba(45,212,191,0.2);
 }
 
 .service-card .service-number {
@@ -150,10 +170,10 @@
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #6b7280;
+  color: #2dd4bf;
   margin-top: 1.25rem;
   padding-top: 1.25rem;
-  border-top: 1px solid rgba(0,0,0,0.06);
+  border-top: 1px solid rgba(45,212,191,0.15);
 }
 
 .service-card-link {
@@ -162,11 +182,12 @@
   gap: 0.4rem;
   font-size: 0.8125rem;
   font-weight: 600;
-  color: #1a2744;
+  color: #6b7280;
   margin-top: 1rem;
-  transition: gap 0.2s ease;
+  transition: gap 0.2s ease, color 0.2s ease;
 }
 
 .service-card:hover .service-card-link {
   gap: 0.65rem;
+  color: #2dd4bf;
 }
