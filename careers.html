@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Careers at Black Dot — Join a tight-knit team of cybersecurity specialists protecting India's most critical enterprises. Funded certifications, real enterprise exposure, fast growth.">
+  <title>Careers — Black Dot</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream: '#FAFAF7',
+            navy: '#1a2744',
+            'navy-mid': '#243459',
+            accent: '#2dd4bf',
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css?v=3">
+  <link rel="stylesheet" href="css/service-page.css?v=3">
+
+  <style>
+    /* Stat strip */
+    .stat-strip {
+      background: #fff;
+      border-bottom: 1px solid rgba(26,39,68,0.06);
+    }
+    .stat-strip-item {
+      display: flex;
+      align-items: center;
+      gap: 0.625rem;
+      padding: 1.25rem 0;
+    }
+    .stat-strip-num {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: #2dd4bf;
+      line-height: 1;
+    }
+    .stat-strip-label {
+      font-size: 0.8125rem;
+      color: #6b7280;
+      line-height: 1.4;
+    }
+
+    /* Why-join cards */
+    .reason-card {
+      background: #fff;
+      border-radius: 1.25rem;
+      padding: 2rem;
+      border: 1px solid rgba(26,39,68,0.07);
+      transition: box-shadow 0.3s ease, transform 0.3s ease, border-color 0.2s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .reason-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: #2dd4bf;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+    .reason-card:hover::before { transform: scaleX(1); }
+    .reason-card:hover {
+      box-shadow: 0 12px 40px rgba(26,39,68,0.10);
+      transform: translateY(-4px);
+      border-color: rgba(45,212,191,0.25);
+    }
+    .reason-icon {
+      width: 48px; height: 48px;
+      background: rgba(45,212,191,0.1);
+      border-radius: 0.75rem;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 1.25rem;
+      color: #2dd4bf;
+    }
+    .reason-title {
+      font-size: 1.0625rem;
+      font-weight: 700;
+      color: #1a2744;
+      margin-bottom: 0.625rem;
+    }
+    .reason-desc {
+      font-size: 0.9rem;
+      color: #6b7280;
+      line-height: 1.75;
+    }
+
+    /* Perk / benefit badges */
+    .perk-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.875rem;
+      padding: 1.25rem 1.5rem;
+      background: #fff;
+      border-radius: 1rem;
+      border: 1px solid rgba(26,39,68,0.07);
+    }
+    .perk-dot {
+      flex-shrink: 0;
+      width: 8px; height: 8px;
+      border-radius: 999px;
+      background: #2dd4bf;
+      margin-top: 0.375rem;
+    }
+    .perk-label {
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: #1a2744;
+      margin-bottom: 0.2rem;
+    }
+    .perk-sub {
+      font-size: 0.8125rem;
+      color: #6b7280;
+      line-height: 1.6;
+    }
+
+    /* Open roles */
+    .role-card {
+      background: #fff;
+      border-radius: 1.25rem;
+      padding: 1.75rem 2rem;
+      border: 1px solid rgba(26,39,68,0.08);
+      transition: box-shadow 0.3s ease, transform 0.3s ease, border-color 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .role-card:hover {
+      box-shadow: 0 10px 32px rgba(26,39,68,0.09);
+      transform: translateY(-3px);
+      border-color: rgba(45,212,191,0.3);
+    }
+    .role-dept {
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #2dd4bf;
+    }
+    .role-title {
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: #1a2744;
+      line-height: 1.3;
+    }
+    .role-meta {
+      font-size: 0.8125rem;
+      color: #9ca3af;
+    }
+    .role-desc {
+      font-size: 0.875rem;
+      color: #6b7280;
+      line-height: 1.75;
+      flex-grow: 1;
+    }
+    .role-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .role-tag {
+      font-size: 0.6875rem;
+      font-weight: 600;
+      color: #1a2744;
+      background: rgba(26,39,68,0.06);
+      border-radius: 999px;
+      padding: 0.2rem 0.625rem;
+    }
+    .role-apply {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.375rem;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: #2dd4bf;
+      margin-top: 0.25rem;
+      transition: gap 0.2s ease;
+    }
+    .role-apply:hover { gap: 0.625rem; }
+
+    /* Hiring steps */
+    .step-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.5rem;
+    }
+    .step-badge {
+      flex-shrink: 0;
+      width: 44px; height: 44px;
+      background: rgba(45,212,191,0.1);
+      border-radius: 999px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.875rem;
+      font-weight: 800;
+      color: #2dd4bf;
+    }
+    .step-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #1a2744;
+      margin-bottom: 0.375rem;
+    }
+    .step-desc {
+      font-size: 0.875rem;
+      color: #6b7280;
+      line-height: 1.7;
+    }
+  </style>
+</head>
+<body class="bg-cream font-sans antialiased">
+
+  <!-- NAVIGATION -->
+  <header id="site-header" class="fixed top-0 left-0 right-0 z-50">
+    <nav class="max-w-7xl mx-auto px-6 lg:px-10 flex items-center justify-between h-16 lg:h-20">
+      <a href="index.html" class="flex-shrink-0 flex items-center">
+        <img src="assets/logo.jpg" alt="Black Dot" class="h-9 lg:h-11 w-auto object-contain">
+      </a>
+      <ul class="hidden md:flex items-center gap-8">
+        <li class="nav-dropdown">
+          <a href="index.html#services" class="nav-link nav-dropdown-trigger text-sm font-medium tracking-wide transition-colors duration-200 inline-flex items-center gap-1">
+            Services
+            <svg class="nav-chevron" width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true">
+              <path d="M2 4l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <div class="nav-dropdown-menu">
+            <a href="services/code-ai-security.html" class="nav-dropdown-item">
+              <span class="nav-dropdown-num">01</span>
+              <span><span class="nav-dropdown-title">Code &amp; AI Security</span><span class="nav-dropdown-sub">Snyk</span></span>
+            </a>
+            <a href="services/observability-security.html" class="nav-dropdown-item">
+              <span class="nav-dropdown-num">02</span>
+              <span><span class="nav-dropdown-title">Unified Observability</span><span class="nav-dropdown-sub">Datadog</span></span>
+            </a>
+            <a href="services/zero-trust-security.html" class="nav-dropdown-item">
+              <span class="nav-dropdown-num">03</span>
+              <span><span class="nav-dropdown-title">Zero Trust Security</span><span class="nav-dropdown-sub">Palo Alto Networks &middot; Cisco</span></span>
+            </a>
+            <a href="services/cyber-resiliency.html" class="nav-dropdown-item">
+              <span class="nav-dropdown-num">04</span>
+              <span><span class="nav-dropdown-title">Zero Trust Data Security</span><span class="nav-dropdown-sub">Rubrik</span></span>
+            </a>
+            <a href="services/identity-access-management.html" class="nav-dropdown-item">
+              <span class="nav-dropdown-num">05</span>
+              <span><span class="nav-dropdown-title">Identity &amp; Access Management</span><span class="nav-dropdown-sub">RSA</span></span>
+            </a>
+          </div>
+        </li>
+        <li><a href="index.html#about" class="nav-link text-sm font-medium tracking-wide transition-colors duration-200">About</a></li>
+        <li><a href="index.html#why" class="nav-link text-sm font-medium tracking-wide transition-colors duration-200">Why Us</a></li>
+        <li><a href="partnerships.html" class="nav-link text-sm font-medium tracking-wide transition-colors duration-200">Partners</a></li>
+        <li><a href="careers.html" class="nav-link text-sm font-medium tracking-wide transition-colors duration-200">Careers</a></li>
+        <li>
+          <a href="index.html#contact" class="nav-cta text-sm font-semibold px-5 py-2 rounded-full border transition-all duration-200">Contact Us</a>
+        </li>
+      </ul>
+      <button id="hamburger" class="md:hidden p-2 focus:outline-none" aria-label="Toggle navigation menu">
+        <span class="ham-bar block w-5 h-[1.5px] bg-current mb-[5px] transition-all duration-300 origin-center"></span>
+        <span class="ham-bar block w-5 h-[1.5px] bg-current mb-[5px] transition-all duration-300"></span>
+        <span class="ham-bar block w-5 h-[1.5px] bg-current transition-all duration-300 origin-center"></span>
+      </button>
+    </nav>
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 shadow-lg">
+      <ul class="flex flex-col px-6 py-4 gap-1">
+        <li class="mobile-section-label">Services</li>
+        <li><a href="services/code-ai-security.html"      class="block text-sm font-medium text-navy/80 py-2.5 pl-3 border-l-2 border-navy/10">Code &amp; AI Security</a></li>
+        <li><a href="services/observability-security.html" class="block text-sm font-medium text-navy/80 py-2.5 pl-3 border-l-2 border-navy/10">Unified Observability</a></li>
+        <li><a href="services/zero-trust-security.html"   class="block text-sm font-medium text-navy/80 py-2.5 pl-3 border-l-2 border-navy/10">Zero Trust Security</a></li>
+        <li><a href="services/cyber-resiliency.html"      class="block text-sm font-medium text-navy/80 py-2.5 pl-3 border-l-2 border-navy/10">Zero Trust Data Security</a></li>
+        <li><a href="services/identity-access-management.html" class="block text-sm font-medium text-navy/80 py-2.5 pl-3 border-l-2 border-navy/10 mb-2">Identity &amp; Access Management</a></li>
+        <li><a href="index.html#about"    class="block text-sm font-medium text-navy py-3 border-t border-gray-100">About</a></li>
+        <li><a href="index.html#why"      class="block text-sm font-medium text-navy py-3 border-t border-gray-100">Why Us</a></li>
+        <li><a href="partnerships.html"   class="block text-sm font-medium text-navy py-3 border-t border-gray-100">Partners</a></li>
+        <li><a href="careers.html"        class="block text-sm font-medium text-navy py-3 border-t border-gray-100">Careers</a></li>
+        <li><a href="index.html#contact"  class="block text-sm font-semibold text-navy py-3 border-t border-gray-100">Contact Us</a></li>
+      </ul>
+    </div>
+  </header>
+
+
+  <!-- HERO -->
+  <section class="bg-navy pt-32 pb-20 lg:pt-44 lg:pb-32 relative overflow-hidden">
+    <!-- subtle grid pattern -->
+    <div class="absolute inset-0 opacity-[0.03]"
+      style="background-image: linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px); background-size: 48px 48px;">
+    </div>
+    <!-- teal glow accent -->
+    <div class="absolute top-0 right-0 w-[500px] h-[500px] rounded-full opacity-[0.04]"
+      style="background: radial-gradient(circle, #2dd4bf 0%, transparent 70%); transform: translate(30%, -30%);">
+    </div>
+    <div class="max-w-7xl mx-auto px-6 lg:px-10 relative">
+      <div class="reveal max-w-3xl">
+        <p class="eyebrow-label-light">Join Our Team</p>
+        <h1 class="text-4xl lg:text-6xl font-bold text-white leading-tight tracking-tight mt-4">
+          Don't just work in security.<br>
+          <span style="color:#2dd4bf;">Define it.</span>
+        </h1>
+        <p class="text-white/60 text-lg lg:text-xl font-light max-w-2xl mt-6 leading-relaxed">
+          Black Dot is where sharp minds come to do consequential work — securing enterprises that
+          can't afford to fail, with technology that sits at the forefront of the industry.
+        </p>
+        <div class="flex flex-wrap gap-4 mt-10">
+          <a href="#open-roles" class="inline-block bg-[#2dd4bf] text-navy font-semibold text-sm px-7 py-3.5 rounded-full hover:bg-[#26bfac] transition-colors duration-200">
+            View Open Roles
+          </a>
+          <a href="mailto:support@black-dot.io?subject=Open%20Application%20%E2%80%94%20Black%20Dot"
+             class="inline-block border border-white/20 text-white/80 font-medium text-sm px-7 py-3.5 rounded-full hover:border-white/50 hover:text-white transition-all duration-200">
+            Send Your CV
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- STATS STRIP -->
+  <div class="stat-strip">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10">
+      <div class="grid grid-cols-2 sm:grid-cols-4 divide-x divide-navy/8">
+        <div class="stat-strip-item px-4 first:pl-0 last:pr-0">
+          <div>
+            <p class="stat-strip-num">20+</p>
+            <p class="stat-strip-label">Enterprise clients<br>protected</p>
+          </div>
+        </div>
+        <div class="stat-strip-item px-4">
+          <div>
+            <p class="stat-strip-num">12</p>
+            <p class="stat-strip-label">Global technology<br>partners</p>
+          </div>
+        </div>
+        <div class="stat-strip-item px-4">
+          <div>
+            <p class="stat-strip-num">360°</p>
+            <p class="stat-strip-label">Security coverage<br>every engagement</p>
+          </div>
+        </div>
+        <div class="stat-strip-item px-4">
+          <div>
+            <p class="stat-strip-num">New Delhi</p>
+            <p class="stat-strip-label">Headquartered, growing<br>fast across India</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- WHY JOIN US -->
+  <section class="py-20 lg:py-28 bg-cream">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10">
+      <div class="reveal text-center mb-16 max-w-2xl mx-auto">
+        <span class="teal-rule mx-auto"></span>
+        <p class="eyebrow-label">Why Black Dot</p>
+        <h2 class="section-heading mt-4">Six reasons to make the move.</h2>
+        <p class="section-body-light">
+          We're not a ticket-grinding firm. We're a small team of specialists who go deep —
+          and we want people who thrive doing the same.
+        </p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <div class="reveal reason-card">
+          <div class="reason-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+          </div>
+          <p class="reason-title">Real enterprise security work</p>
+          <p class="reason-desc">
+            Every project you touch protects live infrastructure at banks, fintechs, and high-growth tech
+            companies. No sandbox projects, no fake data — your work ships into production and matters on
+            day one.
+          </p>
+        </div>
+
+        <div class="reveal reason-card">
+          <div class="reason-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/>
+            </svg>
+          </div>
+          <p class="reason-title">Hands-on with best-in-class tools</p>
+          <p class="reason-desc">
+            Get certified and operate Snyk, Datadog, Palo Alto Networks, Rubrik, RSA, and more.
+            We invest in training because our competitive advantage is your expertise — and that
+            alignment is built into how we run every engagement.
+          </p>
+        </div>
+
+        <div class="reveal reason-card">
+          <div class="reason-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/>
+            </svg>
+          </div>
+          <p class="reason-title">Sponsored certifications &amp; learning</p>
+          <p class="reason-desc">
+            Black Dot funds your professional growth. From CISSP and CISM to vendor-specific
+            certifications across our partner ecosystem — if it makes you better at your craft,
+            we cover the cost and give you the time to prepare.
+          </p>
+        </div>
+
+        <div class="reveal reason-card">
+          <div class="reason-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/>
+            </svg>
+          </div>
+          <p class="reason-title">Fast-track career growth</p>
+          <p class="reason-desc">
+            We're growing fast and building for scale. Joining now means you won't spend years
+            waiting for a title change — strong contributors move up quickly, take on lead roles,
+            and directly influence how the firm operates and grows.
+          </p>
+        </div>
+
+        <div class="reveal reason-card">
+          <div class="reason-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/>
+            </svg>
+          </div>
+          <p class="reason-title">Senior mentorship from day one</p>
+          <p class="reason-desc">
+            Our leadership team brings 20+ combined years in enterprise security consulting. You'll
+            work directly alongside principals — not buried in a hierarchy — with structured 1-on-1
+            mentorship built into how we onboard and develop everyone.
+          </p>
+        </div>
+
+        <div class="reveal reason-card">
+          <div class="reason-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/>
+            </svg>
+          </div>
+          <p class="reason-title">Flexibility &amp; work-life respect</p>
+          <p class="reason-desc">
+            We operate on outcomes, not optics. Flexible working arrangements, reasonable hours,
+            and a culture that doesn't confuse presence with performance. Security is a high-stakes
+            field — your energy and wellbeing are assets we protect too.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- BENEFITS -->
+  <section class="py-20 lg:py-28 bg-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10">
+      <div class="grid lg:grid-cols-2 gap-16 items-start">
+
+        <!-- Left: heading -->
+        <div class="reveal">
+          <span class="teal-rule"></span>
+          <p class="eyebrow-label mt-4">What We Offer</p>
+          <h2 class="section-heading mt-4">Benefits that reflect<br>how much we value you.</h2>
+          <p class="section-body mt-6">
+            We believe that exceptional people deserve to be taken care of — with investment in their
+            skills, respect for their time, and compensation that keeps pace with their growth.
+          </p>
+          <blockquote class="mt-8 pl-5 border-l-2 border-[#2dd4bf]">
+            <p class="text-navy/70 text-base italic leading-relaxed">
+              "We hire for curiosity and drive, then give people every resource they need to become the
+              best in their domain. That's how we build a team that clients trust with their most critical assets."
+            </p>
+            <footer class="mt-3 text-sm font-semibold text-navy/50">— Leadership, Black Dot</footer>
+          </blockquote>
+        </div>
+
+        <!-- Right: perk grid -->
+        <div class="reveal grid sm:grid-cols-2 gap-4">
+          <div class="perk-item">
+            <div class="perk-dot"></div>
+            <div>
+              <p class="perk-label">Certification Sponsorship</p>
+              <p class="perk-sub">Full cost coverage for CISSP, CISM, CEH, Snyk Ambassador, Datadog, Palo Alto PCNSE, and more.</p>
+            </div>
+          </div>
+          <div class="perk-item">
+            <div class="perk-dot"></div>
+            <div>
+              <p class="perk-label">Competitive CTC</p>
+              <p class="perk-sub">Market-aligned packages with performance bonuses tied to individual and firm growth.</p>
+            </div>
+          </div>
+          <div class="perk-item">
+            <div class="perk-dot"></div>
+            <div>
+              <p class="perk-label">Flexible Work Arrangements</p>
+              <p class="perk-sub">Hybrid model with remote flexibility for focused work. Output matters more than office hours.</p>
+            </div>
+          </div>
+          <div class="perk-item">
+            <div class="perk-dot"></div>
+            <div>
+              <p class="perk-label">Learning &amp; Development Budget</p>
+              <p class="perk-sub">Dedicated annual budget for courses, conferences, and security research tools of your choice.</p>
+            </div>
+          </div>
+          <div class="perk-item">
+            <div class="perk-dot"></div>
+            <div>
+              <p class="perk-label">Direct Client Exposure</p>
+              <p class="perk-sub">Work face-to-face with CISOs and senior security leads. Build the network that accelerates a career.</p>
+            </div>
+          </div>
+          <div class="perk-item">
+            <div class="perk-dot"></div>
+            <div>
+              <p class="perk-label">Fast-tracked Responsibility</p>
+              <p class="perk-sub">Own engagements early. Lead proposals and client deliverables well before a large firm would allow it.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- CULTURE -->
+  <section class="py-20 lg:py-28 bg-cream">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10">
+      <div class="reveal text-center mb-16 max-w-2xl mx-auto">
+        <p class="eyebrow-label">Our Culture</p>
+        <h2 class="section-heading mt-4">We look for people who fit these three things.</h2>
+      </div>
+
+      <div class="grid sm:grid-cols-3 gap-8">
+        <div class="reveal pillar-block">
+          <p class="pillar-number">01</p>
+          <p class="pillar-title">Think in systems</p>
+          <p class="pillar-desc">
+            Security isn't a checklist — it's a discipline that requires understanding how every
+            layer of an enterprise fits together. We hire people who see the whole picture, not
+            just the ticket in front of them.
+          </p>
+        </div>
+        <div class="reveal pillar-block">
+          <p class="pillar-number">02</p>
+          <p class="pillar-title">Act with ownership</p>
+          <p class="pillar-desc">
+            Every person on this team is a professional who takes responsibility for outcomes.
+            We don't manage closely because we hire people who don't need to be managed closely —
+            they hold themselves to a higher standard.
+          </p>
+        </div>
+        <div class="reveal pillar-block">
+          <p class="pillar-number">03</p>
+          <p class="pillar-title">Grow continuously</p>
+          <p class="pillar-desc">
+            The threat landscape never stops evolving and neither do we. We prize people who
+            read, experiment, earn new certifications, and bring insights back to the team.
+            Curiosity isn't optional here — it's expected.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- OPEN ROLES -->
+  <section id="open-roles" class="py-20 lg:py-28 bg-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10">
+      <div class="reveal text-center mb-16 max-w-2xl mx-auto">
+        <span class="teal-rule mx-auto"></span>
+        <p class="eyebrow-label">Open Roles</p>
+        <h2 class="section-heading mt-4">Where could you contribute?</h2>
+        <p class="section-body-light">
+          We're building out capabilities across consulting, engineering, and commercial. If your
+          background spans more than one area — that's a good thing.
+        </p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+
+        <div class="reveal role-card">
+          <div>
+            <p class="role-dept">Consulting</p>
+            <p class="role-title">Cybersecurity Consultant</p>
+            <p class="role-meta">New Delhi &nbsp;·&nbsp; Full-time &nbsp;·&nbsp; 2–5 yrs experience</p>
+          </div>
+          <p class="role-desc">
+            Lead security assessment, architecture advisory, and tool deployment engagements across
+            our enterprise client base. You'll work across our full service portfolio — from zero trust
+            design to DevSecOps pipeline implementation.
+          </p>
+          <div class="role-tags">
+            <span class="role-tag">Security Architecture</span>
+            <span class="role-tag">Client Advisory</span>
+            <span class="role-tag">Palo Alto / Cisco</span>
+          </div>
+          <a href="mailto:support@black-dot.io?subject=Application%3A%20Cybersecurity%20Consultant" class="role-apply">
+            Apply now
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 9.5l7-7M9.5 2.5H2.5m7 0v7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+
+        <div class="reveal role-card">
+          <div>
+            <p class="role-dept">Engineering</p>
+            <p class="role-title">DevSecOps Engineer</p>
+            <p class="role-meta">New Delhi &nbsp;·&nbsp; Full-time &nbsp;·&nbsp; 2–4 yrs experience</p>
+          </div>
+          <p class="role-desc">
+            Design and implement developer security toolchains — integrating Snyk, GitGuardian, and
+            cloud-native security controls into client CI/CD pipelines. You'll bridge security and
+            engineering in environments where speed is non-negotiable.
+          </p>
+          <div class="role-tags">
+            <span class="role-tag">Snyk</span>
+            <span class="role-tag">CI/CD Security</span>
+            <span class="role-tag">GitGuardian</span>
+          </div>
+          <a href="mailto:support@black-dot.io?subject=Application%3A%20DevSecOps%20Engineer" class="role-apply">
+            Apply now
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 9.5l7-7M9.5 2.5H2.5m7 0v7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+
+        <div class="reveal role-card">
+          <div>
+            <p class="role-dept">Presales</p>
+            <p class="role-title">Solutions Architect</p>
+            <p class="role-meta">New Delhi &nbsp;·&nbsp; Full-time &nbsp;·&nbsp; 4–8 yrs experience</p>
+          </div>
+          <p class="role-desc">
+            Partner with the commercial team to design compelling technical solutions for enterprise
+            prospects. Lead proof-of-concept engagements, respond to RFPs with precision, and build
+            the technical credibility that closes meaningful deals.
+          </p>
+          <div class="role-tags">
+            <span class="role-tag">Solution Design</span>
+            <span class="role-tag">Enterprise Sales</span>
+            <span class="role-tag">RFP / PoC</span>
+          </div>
+          <a href="mailto:support@black-dot.io?subject=Application%3A%20Solutions%20Architect" class="role-apply">
+            Apply now
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 9.5l7-7M9.5 2.5H2.5m7 0v7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+
+        <div class="reveal role-card">
+          <div>
+            <p class="role-dept">Security Operations</p>
+            <p class="role-title">Security Operations Analyst</p>
+            <p class="role-meta">New Delhi &nbsp;·&nbsp; Full-time &nbsp;·&nbsp; 1–3 yrs experience</p>
+          </div>
+          <p class="role-desc">
+            Monitor, triage, and respond to security events across client environments using Datadog
+            SIEM and Elastic Security. Build detection rules, tune alerting, and produce actionable
+            threat intelligence reports for security leadership.
+          </p>
+          <div class="role-tags">
+            <span class="role-tag">Datadog SIEM</span>
+            <span class="role-tag">Threat Detection</span>
+            <span class="role-tag">Elastic</span>
+          </div>
+          <a href="mailto:support@black-dot.io?subject=Application%3A%20Security%20Operations%20Analyst" class="role-apply">
+            Apply now
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 9.5l7-7M9.5 2.5H2.5m7 0v7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+
+        <div class="reveal role-card">
+          <div>
+            <p class="role-dept">Cloud Security</p>
+            <p class="role-title">Cloud Security Engineer</p>
+            <p class="role-meta">New Delhi &nbsp;·&nbsp; Full-time &nbsp;·&nbsp; 3–6 yrs experience</p>
+          </div>
+          <p class="role-desc">
+            Harden cloud environments across AWS, Azure, and GCP for enterprise clients. Deploy and
+            configure cloud security posture management, workload protection, and infrastructure-as-code
+            scanning using our partner technology stack.
+          </p>
+          <div class="role-tags">
+            <span class="role-tag">AWS / Azure / GCP</span>
+            <span class="role-tag">CSPM</span>
+            <span class="role-tag">IaC Security</span>
+          </div>
+          <a href="mailto:support@black-dot.io?subject=Application%3A%20Cloud%20Security%20Engineer" class="role-apply">
+            Apply now
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 9.5l7-7M9.5 2.5H2.5m7 0v7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+
+        <div class="reveal role-card">
+          <div>
+            <p class="role-dept">Identity &amp; Access</p>
+            <p class="role-title">IAM Specialist</p>
+            <p class="role-meta">New Delhi &nbsp;·&nbsp; Full-time &nbsp;·&nbsp; 2–5 yrs experience</p>
+          </div>
+          <p class="role-desc">
+            Design and deploy identity and access management solutions using RSA and complementary
+            platforms. Implement MFA, SSO, privileged access management, and identity governance
+            programmes for regulated enterprise environments.
+          </p>
+          <div class="role-tags">
+            <span class="role-tag">RSA</span>
+            <span class="role-tag">MFA / SSO</span>
+            <span class="role-tag">PAM</span>
+          </div>
+          <a href="mailto:support@black-dot.io?subject=Application%3A%20IAM%20Specialist" class="role-apply">
+            Apply now
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 9.5l7-7M9.5 2.5H2.5m7 0v7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- HOW WE HIRE -->
+  <section class="py-20 lg:py-28 bg-cream">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10">
+      <div class="grid lg:grid-cols-2 gap-16 items-start">
+        <div class="reveal">
+          <span class="teal-rule"></span>
+          <p class="eyebrow-label mt-4">Our Process</p>
+          <h2 class="section-heading mt-4">Straightforward, respectful, fast.</h2>
+          <p class="section-body mt-6">
+            We keep the hiring process short on purpose. We respect that your time has value and
+            we move at pace. No six-round marathons — if we think you're a fit, you'll know quickly.
+          </p>
+        </div>
+        <div class="reveal flex flex-col gap-8">
+          <div class="step-row">
+            <div class="step-badge">01</div>
+            <div>
+              <p class="step-title">Send your CV &amp; a short note</p>
+              <p class="step-desc">Email us at <a href="mailto:support@black-dot.io" class="text-[#2dd4bf] hover:underline">support@black-dot.io</a> with your CV and a paragraph on what you want to build here. No cover letter template needed — just be direct.</p>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-badge">02</div>
+            <div>
+              <p class="step-title">Introductory conversation</p>
+              <p class="step-desc">A 30-minute call with our leadership team. We'll talk about your background, what you care about, and what you're looking for. We'll also answer any questions you have — openly.</p>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-badge">03</div>
+            <div>
+              <p class="step-title">Technical or case discussion</p>
+              <p class="step-desc">A focused 60-minute discussion on a real-world scenario in your domain. No trick questions — we're testing how you think, not how well you've memorised textbooks.</p>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-badge">04</div>
+            <div>
+              <p class="step-title">Offer &amp; onboarding</p>
+              <p class="step-desc">If there's a fit, we move fast. Offer, negotiation, and joining date — typically within a week of the final conversation. We'll have a structured onboarding plan ready on day one.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- SEND CV CTA -->
+  <section class="py-20 lg:py-28 bg-navy">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10 text-center reveal">
+      <p class="eyebrow-label-light mb-4">Always Open</p>
+      <h2 class="text-3xl lg:text-4xl font-bold text-white mb-4">Don't see a role that fits?</h2>
+      <p class="text-white/50 text-lg mb-10 max-w-xl mx-auto leading-relaxed">
+        We're always interested in meeting exceptional people, regardless of whether we have a specific
+        opening. Tell us what you do and what you want to build — we read everything.
+      </p>
+      <a href="mailto:support@black-dot.io?subject=Open%20Application%20%E2%80%94%20Black%20Dot"
+         class="inline-block bg-[#2dd4bf] text-navy font-semibold text-sm px-9 py-4 rounded-full hover:bg-[#26bfac] transition-colors duration-200">
+        Send Your CV
+      </a>
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer class="bg-navy border-t border-white/8">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10 pt-14 pb-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+      <div class="lg:col-span-1">
+        <img src="assets/logo.jpg" alt="Black Dot" class="h-9 w-auto object-contain opacity-60 mb-4">
+        <p class="text-white/40 text-xs leading-relaxed max-w-xs">
+          Reliable and Resilient Digital Transformation Partner. Cybersecurity solutions powered by world-class technology partnerships.
+        </p>
+      </div>
+      <div>
+        <p class="footer-col-heading">Services</p>
+        <ul class="footer-link-list">
+          <li><a href="services/code-ai-security.html"               class="footer-link">Code &amp; AI Security</a></li>
+          <li><a href="services/observability-security.html"          class="footer-link">Unified Observability</a></li>
+          <li><a href="services/zero-trust-security.html"             class="footer-link">Zero Trust Security</a></li>
+          <li><a href="services/cyber-resiliency.html"                class="footer-link">Zero Trust Data Security</a></li>
+          <li><a href="services/identity-access-management.html"      class="footer-link">Identity &amp; Access Management</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-col-heading">Company</p>
+        <ul class="footer-link-list">
+          <li><a href="index.html#about"   class="footer-link">About Us</a></li>
+          <li><a href="index.html#why"     class="footer-link">Why Black Dot</a></li>
+          <li><a href="partnerships.html"  class="footer-link">Partners</a></li>
+          <li><a href="careers.html"       class="footer-link">Careers</a></li>
+          <li><a href="index.html#contact" class="footer-link">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-col-heading">Get in Touch</p>
+        <a href="mailto:support@black-dot.io" class="footer-link block mb-1.5">support@black-dot.io</a>
+        <a href="tel:+919625876989" class="footer-link block mb-1.5">+91-9625-876-989</a>
+        <p class="text-white/30 text-xs mt-3 leading-relaxed">44 Backary Portion, 2nd Floor,<br>Regal Building, New Delhi — 110001</p>
+      </div>
+    </div>
+    <div class="border-t border-white/8 max-w-7xl mx-auto px-6 lg:px-10 py-6 flex flex-col sm:flex-row items-center justify-between gap-3">
+      <p class="text-white/30 text-xs tracking-wide">&copy; 2026 Black Dot Consultancy Pvt. Ltd. &mdash; All Rights Reserved.</p>
+      <a href="#" aria-label="LinkedIn" class="text-white/30 hover:text-[#2dd4bf] transition-colors duration-200">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+      </a>
+    </div>
+  </footer>
+
+  <script src="js/main.js?v=3"></script>
+</body>
+</html>
