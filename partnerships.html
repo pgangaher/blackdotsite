@@ -12,10 +12,11 @@
       theme: {
         extend: {
           colors: {
-            cream: '#FAFAF7',
-            navy: '#1a2744',
-            'navy-mid': '#243459',
-            accent: '#2dd4bf',
+            cream: '#F1EBDE',
+            navy: '#182F16',
+            'navy-mid': '#243B20',
+            accent: '#C39523',
+            sage: '#9FA894',
           },
           fontFamily: {
             sans: ['Inter', 'system-ui', 'sans-serif'],
@@ -28,8 +29,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css?v=3">
-  <link rel="stylesheet" href="css/service-page.css?v=3">
+  <link rel="stylesheet" href="css/styles.css?v=4">
+  <link rel="stylesheet" href="css/service-page.css?v=4">
 
   <style>
     /* Partner cards */
@@ -40,7 +41,7 @@
       display: flex;
       flex-direction: column;
       gap: 1.25rem;
-      border: 1px solid rgba(26,39,68,0.07);
+      border: 1px solid rgba(24,47,22,0.07);
       transition: box-shadow 0.3s ease, transform 0.3s ease, border-color 0.2s ease;
       position: relative;
       overflow: hidden;
@@ -50,16 +51,16 @@
       position: absolute;
       bottom: 0; left: 0; right: 0;
       height: 2px;
-      background: #2dd4bf;
+      background: #C39523;
       transform: scaleX(0);
       transform-origin: left;
       transition: transform 0.3s ease;
     }
     .partner-card:hover::after { transform: scaleX(1); }
     .partner-card:hover {
-      box-shadow: 0 12px 40px rgba(26,39,68,0.10);
+      box-shadow: 0 12px 40px rgba(24,47,22,0.10);
       transform: translateY(-5px);
-      border-color: rgba(45,212,191,0.2);
+      border-color: rgba(195,149,35,0.2);
     }
     .partner-card-logo {
       height: 40px;
@@ -74,15 +75,15 @@
       font-weight: 700;
       letter-spacing: 0.2em;
       text-transform: uppercase;
-      color: #2dd4bf;
-      background: rgba(45,212,191,0.1);
+      color: #C39523;
+      background: rgba(195,149,35,0.1);
       border-radius: 999px;
       padding: 0.2rem 0.75rem;
     }
     .partner-card-name {
       font-size: 1.125rem;
       font-weight: 700;
-      color: #1a2744;
+      color: #182F16;
       line-height: 1.3;
     }
     .partner-card-desc {
@@ -97,11 +98,11 @@
       gap: 0.4rem;
       font-size: 0.8125rem;
       font-weight: 600;
-      color: #1a2744;
+      color: #182F16;
       transition: color 0.2s ease, gap 0.2s ease;
     }
     .partner-link:hover {
-      color: #2dd4bf;
+      color: #C39523;
       gap: 0.625rem;
     }
 
@@ -112,7 +113,7 @@
       font-weight: 600;
       padding: 0.45rem 1.125rem;
       border-radius: 999px;
-      border: 1px solid rgba(26,39,68,0.12);
+      border: 1px solid rgba(24,47,22,0.12);
       color: #6b7280;
       background: #fff;
       cursor: pointer;
@@ -121,16 +122,16 @@
     }
     .filter-btn:hover,
     .filter-btn.active {
-      background: #2dd4bf;
-      border-color: #2dd4bf;
-      color: #1a2744;
+      background: #C39523;
+      border-color: #C39523;
+      color: #182F16;
     }
 
     /* Credential stats strip */
     .cred-strip {
       background: #fff;
-      border-top: 1px solid rgba(26,39,68,0.07);
-      border-bottom: 1px solid rgba(26,39,68,0.07);
+      border-top: 1px solid rgba(24,47,22,0.07);
+      border-bottom: 1px solid rgba(24,47,22,0.07);
     }
     .cred-item {
       display: flex;
@@ -142,7 +143,7 @@
     .cred-num {
       font-size: 2rem;
       font-weight: 800;
-      color: #2dd4bf;
+      color: #C39523;
       line-height: 1;
       margin-bottom: 0.375rem;
     }
@@ -160,7 +161,7 @@
       text-transform: uppercase;
       color: #9ca3af;
       padding-bottom: 0.75rem;
-      border-bottom: 1px solid rgba(26,39,68,0.07);
+      border-bottom: 1px solid rgba(24,47,22,0.07);
       margin-bottom: 1.5rem;
     }
   </style>
@@ -169,9 +170,9 @@
 
   <!-- NAVIGATION -->
   <header id="site-header" class="fixed top-0 left-0 right-0 z-50">
-    <nav class="max-w-7xl mx-auto px-6 lg:px-10 flex items-center justify-between h-16 lg:h-20">
+    <nav class="max-w-7xl mx-auto px-6 lg:px-10 flex items-center justify-between h-14 lg:h-16">
       <a href="index.html" class="flex-shrink-0 flex items-center">
-        <img src="assets/logo.jpg" alt="Black Dot" class="h-9 lg:h-11 w-auto object-contain">
+        <img src="assets/logo.jpg" alt="Black Dot" class="h-8 lg:h-9 w-auto object-contain">
       </a>
       <ul class="hidden md:flex items-center gap-8">
         <li class="nav-dropdown">
@@ -242,14 +243,14 @@
       style="background-image: linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px); background-size: 48px 48px;">
     </div>
     <div class="absolute top-0 right-0 w-[600px] h-[600px] rounded-full opacity-[0.04]"
-      style="background: radial-gradient(circle, #2dd4bf 0%, transparent 70%); transform: translate(25%, -25%);">
+      style="background: radial-gradient(circle, #C39523 0%, transparent 70%); transform: translate(25%, -25%);">
     </div>
     <div class="max-w-7xl mx-auto px-6 lg:px-10 relative">
       <div class="reveal max-w-3xl">
         <p class="eyebrow-label-light">Technology Partners</p>
         <h1 class="text-4xl lg:text-6xl font-bold text-white leading-tight tracking-tight mt-4">
           Built on the world's best<br>
-          <span style="color:#2dd4bf;">security technology.</span>
+          <span style="color:#C39523;">security technology.</span>
         </h1>
         <p class="text-white/60 text-lg lg:text-xl font-light max-w-2xl mt-6 leading-relaxed">
           Every engagement we run is backed by certified expertise on best-in-class platforms.
@@ -681,7 +682,7 @@
         enterprise market with a technical delivery partner who truly knows your platform — we'd love
         to have a conversation.
       </p>
-      <a href="index.html#contact" class="inline-block bg-[#2dd4bf] text-navy font-semibold text-sm px-9 py-4 rounded-full hover:bg-[#26bfac] transition-colors duration-200">
+      <a href="index.html#contact" class="inline-block bg-[#C39523] text-navy font-semibold text-sm px-9 py-4 rounded-full hover:bg-[#A87E1E] transition-colors duration-200">
         Explore a Partnership
       </a>
     </div>
@@ -726,7 +727,7 @@
     </div>
     <div class="border-t border-white/8 max-w-7xl mx-auto px-6 lg:px-10 py-6 flex flex-col sm:flex-row items-center justify-between gap-3">
       <p class="text-white/30 text-xs tracking-wide">&copy; 2026 Black Dot Consultancy Pvt. Ltd. &mdash; All Rights Reserved.</p>
-      <a href="#" aria-label="LinkedIn" class="text-white/30 hover:text-[#2dd4bf] transition-colors duration-200">
+      <a href="#" aria-label="LinkedIn" class="text-white/30 hover:text-[#C39523] transition-colors duration-200">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
       </a>
     </div>
